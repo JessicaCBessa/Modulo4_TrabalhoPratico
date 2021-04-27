@@ -336,4 +336,8 @@ export const getRichestsPerAgency = async () => {
   }
 });
 
+app.put('/account/:id', async (req, res) => {
+  res.status(200).send(retorno);
+});
+
 export { app as accountRouter };
