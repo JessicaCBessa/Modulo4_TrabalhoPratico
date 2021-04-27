@@ -2,10 +2,16 @@ import mongoose from 'mongoose';
 import express from 'express';
 import { accountRouter } from './routes/accountRouter.js';
 
+require('dotenv').config();
+
 (async () => {
   try {
     mongoose.connect(
-      'mongodb+srv://dbUser:passwd123@cluster0.rpxs7.mongodb.net/accounts?retryWrites=true&w=majority',
+      'mongodb+srv://' +
+        process.env.USER_DB +
+        ':' +
+        process.env.PASSWORD +
+        '@cluster0.rpxs7.mongodb.net/accounts?retryWrites=true&w=majority',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -21,4 +27,4 @@ const app = express();
 app.use(express.json());
 app.use(accountRouter);
 
-app.listen(3000, () => console.log('API Iniciada'));
+app.listen(process.env.PORT, () => console.log('API Iniciada'));
