@@ -288,6 +288,7 @@ app.patch('/transfereContas', async (req, res) => {
         { new: true }
       );
     }
+    //outra forma de fazer a função
     /*
 export const promoteRichests = async (idAccounts) => {
   const accountsUpdated = await accountModel.updateMany(
