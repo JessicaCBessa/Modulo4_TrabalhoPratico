@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+//Criando esquema da base
 const accountSchema = mongoose.Schema({
   agencia: {
     type: Number,
